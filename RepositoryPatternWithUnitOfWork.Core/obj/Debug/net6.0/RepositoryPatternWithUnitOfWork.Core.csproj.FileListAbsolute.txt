@@ -1,0 +1,12 @@
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\bin\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.deps.json
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\bin\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.dll
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\bin\Debug\net6.0\ref\RepositoryPatternWithUnitOfWork.Core.dll
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\bin\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.pdb
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.csproj.AssemblyReference.cache
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.AssemblyInfoInputs.cache
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.AssemblyInfo.cs
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.dll
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\ref\RepositoryPatternWithUnitOfWork.Core.dll
+C:\Users\Ahmed\source\repos\RepositoryPattern\RepositoryPattern\RepositoryPatternWithUnitOfWork.Core\obj\Debug\net6.0\RepositoryPatternWithUnitOfWork.Core.pdb

@@ -5,7 +5,17 @@
       "ProjectGuid": "cfa92910-1aaa-428a-a9f8-6e65a2aca4f6",
       "DisplayName": "RepositoryPatternUsingUnitOfWork",
       "ColorIndex": 0
+    },
+    "c119a7b8-bd6a-4d18-a1a0-56d2b1b4e0c6": {
+      "ProjectGuid": "c119a7b8-bd6a-4d18-a1a0-56d2b1b4e0c6",
+      "DisplayName": "RepositoryPatternWithUnitOfWork.Core",
+      "ColorIndex": 1
+    },
+    "fa0dbf61-4aa3-4484-a237-6931cb258d99": {
+      "ProjectGuid": "fa0dbf61-4aa3-4484-a237-6931cb258d99",
+      "DisplayName": "RepositoryPatternWithUnitOfWork.EF",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
