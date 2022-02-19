@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MaynGg6Q8PyLmocSVGmSKqYjGUJkwSOlDnZY01v54WrhJgTnpVO6mgqpeJRX4OPMHsNcWWWBMqz47UyAw+4AyA==",
+  "dgSpecHash": "hcm4bMs6o6CQEh7j6kJrTxm3DY6DwUQ3b+eihhuAl4Bi3kZG0Agw/9cY34M0WY3duhaix7Ey+ar4ieOmqV43cA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ahmed\\source\\repos\\RepositoryPattern\\RepositoryPattern\\RepositoryPatternWithUnitOfWork.Core\\RepositoryPatternWithUnitOfWork.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ahmed\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -27,5 +27,12 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
 
             return Ok(authorId);
         }
+
+        [HttpGet("GetAll")]
+
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _authorrRepository.GetAll());
+        }
     }
 }
