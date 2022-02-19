@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cfa92910-1aaa-428a-a9f8-6e65a2aca4f6": {
+      "ProjectGuid": "cfa92910-1aaa-428a-a9f8-6e65a2aca4f6",
+      "DisplayName": "RepositoryPatternUsingUnitOfWork",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
