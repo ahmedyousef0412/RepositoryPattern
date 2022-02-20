@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepositoryPatternWithUnitOfWork.Core.Const;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -18,13 +19,41 @@ namespace RepositoryPatternWithUnitOfWork.Core.Repositories
 
        Task<IEnumerable<T>> GetAll();
 
-        T Find(Expression<Func<T, bool>> match);
-        T Find(Expression<Func<T, bool>> match ,string[] include =null);
-
-        IEnumerable<T> FindAll(Expression<Func<T, bool>> match , string[] include = null);
-        IEnumerable<T> FindAll(Expression<Func<T, bool>> match ,int? take  , int? skip ,string[] include = null);
 
 
+        //Expression Using Lambda Expreesion [I Create It]
+        T Find(Expression<Func<T,bool>> expression);
+
+
+        //If I need to Use [Include]
+        // Make it Null beacuse may be Optional
+        T Find(Expression<Func<T, bool>> expression, string[] includes = null);
+
+
+        IEnumerable<T> FindAll(Expression<Func<T, bool>> expression, string[] includes =null);
+
+
+
+        IEnumerable<T> FindAll(Expression<Func<T,bool>> expression, int skip , int take);
+
+        IEnumerable<T> FindAll(Expression<Func<T,bool>> expression , int? skip , int? take ,
+            
+            Expression<Func<T,object>> orderby , string OrderByDirection = OrderBy.Ascending);
+
+
+        T Add (T entity);
+
+        IEnumerable<T> AddRange(IEnumerable<T> entities);
+
+
+        #region Test
+        //T Find(Expression<Func<T, bool>> match);
+        //T Find(Expression<Func<T, bool>> match ,string[] include =null);
+
+        //IEnumerable<T> FindAll(Expression<Func<T, bool>> match , string[] include = null);
+        //IEnumerable<T> FindAll(Expression<Func<T, bool>> match ,int? take  , int? skip ,string[] include = null);
+
+        #endregion
 
     }
 }
