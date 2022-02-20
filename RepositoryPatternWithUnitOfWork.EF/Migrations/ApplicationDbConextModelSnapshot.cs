@@ -9,7 +9,7 @@ using RepositoryPatternWithUnitOfWork.EF.DataBase;
 
 namespace RepositoryPatternWithUnitOfWork.EF.Migrations
 {
-    [DbContext(typeof(ApplicationDbConext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbConextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -16,10 +16,10 @@ namespace RepositoryPatternWithUnitOfWork.EF.Repositories
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
 
-        private readonly ApplicationDbConext _context;
+        private readonly ApplicationDbContext _context;
 
 
-        public BaseRepository(ApplicationDbConext conext)
+        public BaseRepository(ApplicationDbContext conext)
         {
             _context = conext;
 
@@ -98,7 +98,7 @@ namespace RepositoryPatternWithUnitOfWork.EF.Repositories
         public T Add(T entity)
         {
             _context.Set<T>().Add(entity);
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
             return entity;
         }
@@ -106,8 +106,36 @@ namespace RepositoryPatternWithUnitOfWork.EF.Repositories
         public IEnumerable<T> AddRange(IEnumerable<T> entities)
         {
             _context.AddRange(entities);
-            _context.SaveChanges();
+            //_context.SaveChanges();
             return entities;
+        }
+
+        public T Update(T entity)
+        {
+            _context.Update(entity);
+            return entity;
+
+        }
+
+        public void Delete(T entity)
+        {
+           _context.Set<T>().Remove(entity);
+           
+        }
+
+        public void Attach(T entity)
+        {
+            _context.Set<T>().Attach(entity);
+        }
+
+        public int Count()
+        {
+           return _context.Set<T>().Count();
+        }
+
+        public int Count(Expression<Func<T, bool>> expression)
+        {
+            return _context.Set<T>().Count(expression);
         }
 
 

@@ -45,6 +45,12 @@ namespace RepositoryPatternWithUnitOfWork.Core.Repositories
 
         IEnumerable<T> AddRange(IEnumerable<T> entities);
 
+        T Update(T entity);
+
+        void Delete(T entity);
+        void Attach(T entity);
+        int Count();
+        int Count(Expression<Func<T,bool>> expression);
 
         #region Test
         //T Find(Expression<Func<T, bool>> match);

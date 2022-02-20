@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace RepositoryPatternWithUnitOfWork.EF.DataBase
 {
-    public class ApplicationDbConext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbConext(DbContextOptions<ApplicationDbConext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }

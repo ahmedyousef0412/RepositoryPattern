@@ -5,6 +5,7 @@ using RepositoryPatternWithUnitOfWork.Core.Const;
 using RepositoryPatternWithUnitOfWork.Core.Dtos;
 using RepositoryPatternWithUnitOfWork.Core.Models;
 using RepositoryPatternWithUnitOfWork.Core.Repositories;
+using RepositoryPatternWithUnitOfWork.Core.UnitOfWork;
 
 namespace RepositoryPatternUsingUnitOfWork.Controllers
 {
@@ -12,19 +13,21 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBaseRepository<Book> _bookRepository;
+        //private readonly IBaseRepository<Book> _bookRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public BookController(IBaseRepository<Book> bookRepository, IMapper mapper)
+        public BookController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _bookRepository = bookRepository;
+            //_bookRepository = bookRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var books = await _bookRepository.GetAll();
+            var books = await _unitOfWork.Books.GetAll();
             var dto = _mapper.Map<IEnumerable<BookDetailsDto>>(books);
             return Ok(dto);
         }
@@ -32,7 +35,7 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
         [HttpGet]
         public IActionResult GetById(int id)
         {
-            var bookId = _bookRepository.GetById(id);
+            var bookId = _unitOfWork.Books.GetById(id);
 
             if (bookId == null)
                 return BadRequest($"The Id that you find {id} Not Found");
@@ -44,13 +47,13 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
         [HttpGet("GetByBookName")]
         public IActionResult GetByBookName(string title)
         {
-            return Ok(_bookRepository.Find(b => b.Title.Contains(title)));
+            return Ok(_unitOfWork.Books.Find(b => b.Title.Contains(title)));
         }
 
         [HttpGet("GetAllIncludeAuthorsName")]
         public IActionResult GetAllIncludeAuthorsName(string title, string include)
         {
-            var books = _bookRepository.Find(b => b.Title.Contains(title), new[] { include });
+            var books = _unitOfWork.Books.Find(b => b.Title.Contains(title), new[] { include });
             var dto = _mapper.Map<BookDetailsDto>(books);
             return Ok(dto);
         }
@@ -60,7 +63,7 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
         [HttpGet("GetOrdered")]
         public IActionResult GetOrdered(string title)
         {
-            var books = _bookRepository.FindAll(b => b.Title.Contains(title), null, null, b => b.Id, OrderBy.Descending);
+            var books = _unitOfWork.Books.FindAll(b => b.Title.Contains(title), null, null, b => b.Id, OrderBy.Descending);
             var dto = _mapper.Map<IEnumerable<BookDetailsDto>>(books);
             return Ok(dto);
         }
@@ -70,8 +73,9 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
      
         public IActionResult AddBook( Book book)
         {
-
-          return Ok(_bookRepository.Add(book));
+            var bok = _unitOfWork.Books.Add(book);
+            _unitOfWork.Complete(); //SaveChanges();
+          return Ok(bok);
             //return Ok(_bookRepository.Add(new Book()
             //{
             //    Title = "DataBase",
@@ -83,9 +87,10 @@ namespace RepositoryPatternUsingUnitOfWork.Controllers
         [HttpPost]
         public IActionResult AddMultiBooks(List<Book> books)
         {
-        
-           
-            return Ok(_bookRepository.AddRange(books));
+
+            var book = _unitOfWork.Books.AddRange(books);
+            _unitOfWork.Complete();
+            return Ok(book);
         }
 
 

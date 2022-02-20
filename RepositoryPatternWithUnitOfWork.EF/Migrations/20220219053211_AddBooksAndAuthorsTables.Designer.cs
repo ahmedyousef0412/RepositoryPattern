@@ -10,7 +10,7 @@ using RepositoryPatternWithUnitOfWork.EF.DataBase;
 
 namespace RepositoryPatternWithUnitOfWork.EF.Migrations
 {
-    [DbContext(typeof(ApplicationDbConext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220219053211_AddBooksAndAuthorsTables")]
     partial class AddBooksAndAuthorsTables
     {
